@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Smartwatch Interface</title>
+  </head>
+  <body>
+    <h1>Smartwatch</h1>
+    <div class="container">
+        <div class="header">Dicas de saúde</div>
+        <div class="info">
+            <div class="text">
+                Mantenha uma certa quantidade de exercicios todos os dias, o que ajudara a obter um corpo saudavel e um humor relaxado, cheio de vitalidade.
+            </div>
+        </div>
+        <button>Fazer exercicios</button>
+    </div>
+    <div class="container">
+      <div class="header">Frequência Cardíaca</div>
+      <div class="data-display" id="dataDisplay">
+        <!-- Dados do smartwatch serão exibidos aqui -->
+      </div>
+      <div class="info">
+        <div class="text">
+          A frequência cardíaca é a velocidade do ciclo cardíaco medida pelo número de contrações do coração por minuto. 
+        </div>
+        <img src="" alt="">
+      </div>
+        <button>Verificar</button>
+    </div>
+    <div class="container">
+      <div class="header">Passos</div>
+      <div class="data-display" id="dataDisplay">
+        <!-- Dados do smartwatch serão exibidos aqui -->
+      </div>
+      <div class="info">
+          <img src="" alt="">
+        <div class="text">
+
+        </div>
+      </div>
+        <button>Verificar</button>
+    </div>
+    <div class="container">
+      <div class="header">Notificações</div>
+      <div class="data-display" id="dataDisplay">
+        <!-- Dados do smartwatch serão exibidos aqui -->
+      </div>
+      <div class="info">
+        <div class="text">
+
+        </div>
+        <img src="" alt="">
+      </div>
+      <button>Verificar</button>
+    </div>
+  </body>
+</html>
+
+<script>
+    const heartRateBtn = document.querySelector(".container:nth-child(2) button");
+    const showStepsBtn = document.querySelector(".container:nth-child(3) button");
+    const showNotificationsBtn = document.querySelector(".container:nth-child(4) button");
+
+    heartRateBtn
+        .addEventListener("click", e => showText(e, "Frequência Cardíaca: 75 bpm"));
+    showStepsBtn
+        .addEventListener("click", e => showText(e, "Passos hoje: 5000"));
+    showNotificationsBtn
+        .addEventListener("click", e => showText(e, "Sem novas notificações"));
+
+  function showText(e, text) {
+    e.target.parentNode.querySelector(".data-display").innerHTML = text;
+  }
+</script>
